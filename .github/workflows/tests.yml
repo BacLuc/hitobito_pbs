@@ -110,7 +110,6 @@ jobs:
 
       - name: 'Bundle install wagons'
         run: |
-          unset BUNDLE_GEMFILE
           hitobito_dir=$(realpath ./)
           for d in $hitobito_dir/../hitobito_*; do
             cd $d
