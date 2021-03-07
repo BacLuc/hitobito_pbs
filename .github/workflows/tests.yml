@@ -112,8 +112,8 @@ jobs:
         run: |
           unset BUNDLE_GEMFILE
           hitobito_dir=$(realpath ./)
-          echo $hitobito_dir
-          for d in ../hitobito_*; do
+          for d in $hitobito_dir/../hitobito_*; do
+            echo $d
             cd ../$d
             pwd
             ls -l
