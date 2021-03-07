@@ -113,10 +113,7 @@ jobs:
           unset BUNDLE_GEMFILE
           hitobito_dir=$(realpath ./)
           for d in $hitobito_dir/../hitobito_*; do
-            echo $d
-            cd ../$d
-            pwd
-            ls -l
+            cd $d
             cp -v $hitobito_dir/Gemfile.lock ./
             bundle install --jobs 4 --retry 3
           done
