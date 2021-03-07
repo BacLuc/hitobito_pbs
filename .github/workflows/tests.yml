@@ -81,19 +81,19 @@ jobs:
         run: |
           cp -v Wagonfile.ci Wagonfile
 
-      - name: 'Checkout hitobito-youth'
-        uses: actions/checkout@v2
-        with:
-          repository: 'hitobito/hitobito_youth'
-          ref: '${{ env.HITOBITO_BRANCH }}'
-          path: 'hitobito_youth'
-
       - name: 'Set up Ruby'
         env:
           ImageOS: ubuntu20
         uses: ruby/setup-ruby@v1.66.0
         with:
           working-directory: hitobito
+
+      - name: 'Checkout hitobito-youth'
+        uses: actions/checkout@v2
+        with:
+          repository: 'hitobito/hitobito_youth'
+          ref: '${{ env.HITOBITO_BRANCH }}'
+          path: 'hitobito_youth'
 
       - name: 'Checkout hitobito-pbs'
         uses: actions/checkout@v2
