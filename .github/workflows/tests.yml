@@ -110,11 +110,13 @@ jobs:
 
       - name: 'Bundle install wagons'
         run: |
+          unset BUNDLE_GEMFILE
           hitobito_dir=$(realpath ./)
           echo $hitobito_dir
           for d in ../hitobito_*; do
             cd ../$d
             pwd
+            ls -l
             cp -v $hitobito_dir/Gemfile.lock ./
             bundle install --jobs 4 --retry 3
           done
