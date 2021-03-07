@@ -117,6 +117,7 @@ jobs:
             cp -v $hitobito_dir/Gemfile.lock ./
             bundle install --jobs 4 --retry 3
           done
+        shell: bash
         working-directory: .
 
       - uses: actions/cache@v2
