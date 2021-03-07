@@ -111,7 +111,7 @@ jobs:
       - name: 'Bundle install wagons'
         run: |
           hitobito_dir=$(realpath hitobito)
-          for d in { youth, pbs }; do
+          for d in {youth,pbs}; do
             d="hitobito_$d"
             cd $d
             cp -v $hitobito_dir/Gemfile.lock ./
